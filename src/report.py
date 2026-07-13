@@ -34,6 +34,12 @@ def build(kind,data):
           "sector_observation":group(ranked),"focus":[{**x,"condition":"仅在板块同步、量价确认且未明显高开时观察"} for x in ranked[:5]],
           "risks":["盘前数据可能为上一交易日收盘快照","高开不追，弱于板块时降低优先级","数据缺失项目不作方向判断"],
           "next_actions":["09:25后核对集合竞价与板块联动","开盘后观察15–30分钟承接","触发风险条件时优先控制仓位"]})
+    elif kind=="auction":
+        r.update({"title":"A股集合竞价观察","market_summary":"基于09:25集合竞价结束后的最新公开行情生成；重点观察高低开幅度与板块同步性。",
+          "sector_observation":group(ranked),
+          "focus":[{**x,"auction_signal":auction_signal(x)} for x in ranked[:5]],
+          "risks":["竞价强势不代表开盘后继续走强","明显高开需观察兑现压力，避免直接追涨","个股竞价弱于所属板块时降低关注优先级","开盘后至少观察15分钟承接与量价确认"],
+          "next_actions":[f"{x['name']}：{auction_signal(x)}" for x in ranked[:5]]})
     else:
         up=sum((x.get("change_pct") or 0)>0 for x in ranked); down=sum((x.get("change_pct") or 0)<0 for x in ranked)
         r.update({"title":"A股盘后复盘","market_summary":f"自选样本上涨{up}只、下跌{down}只；结合指数强弱判断风险偏好。",
@@ -42,6 +48,15 @@ def build(kind,data):
           "next_actions":[f"关注{x['name']}：{x['view']}" for x in ranked[:5]]})
     return r
 
+def auction_signal(x):
+    p=x.get("change_pct")
+    if p is None:return "竞价数据缺失，不作判断"
+    if p>=7:return "大幅高开，重点防范开盘兑现，不追涨"
+    if p>=3:return "明显高开，观察板块同步和开盘承接"
+    if p>=-1:return "平开附近，等待开盘后方向确认"
+    if p>=-4:return "明显低开，观察是否快速收复竞价跌幅"
+    return "大幅低开，优先控制风险并等待止跌"
+
 def group(items):
     out={}
     for x in items:out.setdefault(x.get("industry") or "未分类",[]).append(x["name"])
@@ -49,7 +64,7 @@ def group(items):
 
 def main():
     kind=sys.argv[1] if len(sys.argv)>1 else "after-market"
-    if kind not in ("pre-market","after-market"):raise SystemExit("kind must be pre-market or after-market")
+    if kind not in ("pre-market","auction","after-market"):raise SystemExit("kind must be pre-market, auction or after-market")
     data=snapshot(load_config()); report=build(kind,data); os.makedirs(REPORTS,exist_ok=True)
     latest=os.path.join(REPORTS,f"{kind}-latest.json"); dated=os.path.join(REPORTS,f"{kind}-{report['date']}.json")
     for p in (latest,dated):
