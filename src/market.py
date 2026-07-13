@@ -1,38 +1,57 @@
 import json, os, time
 from datetime import datetime, timezone, timedelta
-from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 TZ = timezone(timedelta(hours=8))
-BASE = "https://push2.eastmoney.com/api/qt/stock/get"
-FIELDS = "f43,f44,f45,f46,f47,f48,f49,f50,f57,f58,f60,f116,f117,f162,f167,f168,f169,f170,f171"
+BASE = "https://qt.gtimg.cn/q="
 
-def _num(v, scale=100):
-    if v in (None, "-"): return None
-    return round(float(v) / scale, 3)
+def _float(v):
+    try: return float(v)
+    except (TypeError, ValueError): return None
 
-def quote(item):
+def _symbol(item):
+    return ("sh" if item["market"] == 1 else "sz") + item["code"]
+
+def _fetch(items):
+    symbols = ",".join(_symbol(x) for x in items)
+    req = Request(BASE + symbols, headers={"User-Agent":"Mozilla/5.0","Referer":"https://stockapp.finance.qq.com/"})
     last = None
     for wait in (0, 2, 5):
         if wait: time.sleep(wait)
         try:
-            url=BASE+"?"+urlencode({"secid":f"{item['market']}.{item['code']}","fields":FIELDS})
-            req=Request(url,headers={"User-Agent":"Mozilla/5.0","Referer":"https://quote.eastmoney.com/"})
-            with urlopen(req,timeout=12) as res:d=json.loads(res.read().decode("utf-8")).get("data")
-            if not d: raise RuntimeError("empty quote")
-            return {**item,"price":_num(d.get("f43")),"open":_num(d.get("f46")),"high":_num(d.get("f44")),
-                    "low":_num(d.get("f45")),"prev_close":_num(d.get("f60")),"change_pct":_num(d.get("f170")),
-                    "turnover":d.get("f48"),"volume":d.get("f47"),"amplitude":_num(d.get("f171")),
-                    "turnover_rate":_num(d.get("f168")),"pe":_num(d.get("f162")),"pb":_num(d.get("f167")),
-                    "source":"eastmoney","ok":True}
+            with urlopen(req, timeout=20) as res:
+                raw = res.read().decode("gbk", errors="replace")
+            rows = {}
+            for line in raw.splitlines():
+                if '="' not in line: continue
+                symbol = line.split('="',1)[0].replace("v_","")
+                values = line.split('="',1)[1].rsplit('"',1)[0].split("~")
+                if len(values) < 35: continue
+                rows[symbol] = values
+            return rows, None
         except Exception as e: last = str(e)
-    return {**item,"ok":False,"error":last,"source":"eastmoney"}
+    return {}, last
+
+def _parse(item, rows, error):
+    v = rows.get(_symbol(item))
+    if not v:
+        return {**item,"ok":False,"error":error or "quote missing","source":"tencent"}
+    return {**item,"name":v[1] or item["name"],"price":_float(v[3]),"prev_close":_float(v[4]),
+            "open":_float(v[5]),"volume":_float(v[6]),"change":_float(v[31]),
+            "change_pct":_float(v[32]),"high":_float(v[33]),"low":_float(v[34]),
+            "turnover":_float(v[37]) if len(v)>37 else None,
+            "amplitude":_float(v[43]) if len(v)>43 else None,
+            "turnover_rate":_float(v[38]) if len(v)>38 else None,
+            "quote_time":v[30],"source":"tencent","ok":True}
 
 def snapshot(config):
-    indices=[quote(x) for x in config["indices"]]
-    watch=[quote(x) for x in config["watchlist"]]
-    return {"generated_at":datetime.now(TZ).isoformat(),"indices":indices,"watchlist":watch,
-            "quality":{"ok":sum(x["ok"] for x in indices+watch),"total":len(indices)+len(watch)}}
+    all_items = config["indices"] + config["watchlist"]
+    rows, error = _fetch(all_items)
+    parsed = [_parse(x, rows, error) for x in all_items]
+    n = len(config["indices"])
+    return {"generated_at":datetime.now(TZ).isoformat(),"indices":parsed[:n],"watchlist":parsed[n:],
+            "quality":{"ok":sum(x["ok"] for x in parsed),"total":len(parsed)}}
 
 def load_config():
-    with open(os.path.join(os.path.dirname(__file__),"..","config.json"),encoding="utf-8") as f:return json.load(f)
+    with open(os.path.join(os.path.dirname(__file__),"..","config.json"),encoding="utf-8") as f:
+        return json.load(f)
