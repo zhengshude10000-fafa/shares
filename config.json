@@ -1,0 +1,18 @@
+{
+  "watchlist": [
+    {"code":"000065","name":"北方国际","market":0,"industry":"建筑与国际工程"},
+    {"code":"000636","name":"风华高科","market":0,"industry":"电子元件"},
+    {"code":"000725","name":"京东方A","market":0,"industry":"面板"},
+    {"code":"002274","name":"华昌化工","market":0,"industry":"化工"},
+    {"code":"159558","name":"半导体设备ETF易方达","market":0,"industry":"半导体设备"},
+    {"code":"601958","name":"金钼股份","market":1,"industry":"小金属"},
+    {"code":"002378","name":"章源钨业","market":0,"industry":"小金属"},
+    {"code":"601702","name":"华峰铝业","market":1,"industry":"工业金属"}
+  ],
+  "indices": [
+    {"code":"000001","name":"上证指数","market":1},
+    {"code":"399001","name":"深证成指","market":0},
+    {"code":"399006","name":"创业板指","market":0},
+    {"code":"000688","name":"科创50","market":1}
+  ]
+}
