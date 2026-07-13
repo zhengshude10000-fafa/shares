@@ -2,12 +2,12 @@
   "schema_version": 1,
   "type": "after-market",
   "date": "2026-07-14",
-  "generated_at": "2026-07-14T02:47:59.344568+08:00",
+  "generated_at": "2026-07-14T03:06:39.732461+08:00",
   "is_trading_day": true,
   "data_quality": {
-    "ok": 2,
+    "ok": 12,
     "total": 12,
-    "warning": "10项数据缺失"
+    "warning": "数据完整"
   },
   "indices": [
     {
@@ -22,25 +22,188 @@
     },
     {
       "name": "创业板指",
-      "change_pct": null,
-      "view": "数据缺失，禁止推断"
+      "change_pct": -3.1,
+      "view": "偏弱，等待止跌确认"
     },
     {
       "name": "科创50",
-      "change_pct": null,
-      "view": "数据缺失，禁止推断"
+      "change_pct": -3.42,
+      "view": "偏弱，等待止跌确认"
     }
   ],
-  "watchlist": [],
+  "watchlist": [
+    {
+      "code": "601702",
+      "name": "华峰铝业",
+      "industry": "工业金属",
+      "price": 14.35,
+      "change_pct": -0.62,
+      "view": "震荡，等待方向选择"
+    },
+    {
+      "code": "601958",
+      "name": "金钼股份",
+      "industry": "小金属",
+      "price": 22.24,
+      "change_pct": -0.71,
+      "view": "震荡，等待方向选择"
+    },
+    {
+      "code": "002378",
+      "name": "章源钨业",
+      "industry": "小金属",
+      "price": 26.6,
+      "change_pct": -2.81,
+      "view": "偏弱，等待止跌确认"
+    },
+    {
+      "code": "000065",
+      "name": "北方国际",
+      "industry": "建筑与国际工程",
+      "price": 8.59,
+      "change_pct": -3.7,
+      "view": "偏弱，等待止跌确认"
+    },
+    {
+      "code": "002274",
+      "name": "华昌化工",
+      "industry": "化工",
+      "price": 5.48,
+      "change_pct": -4.86,
+      "view": "偏弱，等待止跌确认"
+    },
+    {
+      "code": "159558",
+      "name": "半导体设备ETF易方达",
+      "industry": "半导体设备",
+      "price": 1.351,
+      "change_pct": -6.51,
+      "view": "显著走弱，优先控制风险"
+    },
+    {
+      "code": "000636",
+      "name": "风华高科",
+      "industry": "电子元件",
+      "price": 54.01,
+      "change_pct": -10.0,
+      "view": "显著走弱，优先控制风险"
+    },
+    {
+      "code": "000725",
+      "name": "京东方Ａ",
+      "industry": "面板",
+      "price": 6.83,
+      "change_pct": -10.01,
+      "view": "显著走弱，优先控制风险"
+    }
+  ],
   "disclaimer": "仅供个人观察与复盘，不构成投资建议。",
   "title": "A股盘后复盘",
-  "market_summary": "自选样本上涨0只、下跌0只；结合指数强弱判断风险偏好。",
-  "sector_observation": [],
-  "focus": [],
+  "market_summary": "自选样本上涨0只、下跌8只；结合指数强弱判断风险偏好。",
+  "sector_observation": [
+    {
+      "sector": "工业金属",
+      "symbols": [
+        "华峰铝业"
+      ],
+      "note": "观察板块内个股是否形成同步强弱"
+    },
+    {
+      "sector": "小金属",
+      "symbols": [
+        "金钼股份",
+        "章源钨业"
+      ],
+      "note": "观察板块内个股是否形成同步强弱"
+    },
+    {
+      "sector": "建筑与国际工程",
+      "symbols": [
+        "北方国际"
+      ],
+      "note": "观察板块内个股是否形成同步强弱"
+    },
+    {
+      "sector": "化工",
+      "symbols": [
+        "华昌化工"
+      ],
+      "note": "观察板块内个股是否形成同步强弱"
+    },
+    {
+      "sector": "半导体设备",
+      "symbols": [
+        "半导体设备ETF易方达"
+      ],
+      "note": "观察板块内个股是否形成同步强弱"
+    },
+    {
+      "sector": "电子元件",
+      "symbols": [
+        "风华高科"
+      ],
+      "note": "观察板块内个股是否形成同步强弱"
+    },
+    {
+      "sector": "面板",
+      "symbols": [
+        "京东方Ａ"
+      ],
+      "note": "观察板块内个股是否形成同步强弱"
+    }
+  ],
+  "focus": [
+    {
+      "code": "601702",
+      "name": "华峰铝业",
+      "industry": "工业金属",
+      "price": 14.35,
+      "change_pct": -0.62,
+      "view": "震荡，等待方向选择"
+    },
+    {
+      "code": "601958",
+      "name": "金钼股份",
+      "industry": "小金属",
+      "price": 22.24,
+      "change_pct": -0.71,
+      "view": "震荡，等待方向选择"
+    },
+    {
+      "code": "002378",
+      "name": "章源钨业",
+      "industry": "小金属",
+      "price": 26.6,
+      "change_pct": -2.81,
+      "view": "偏弱，等待止跌确认"
+    },
+    {
+      "code": "000065",
+      "name": "北方国际",
+      "industry": "建筑与国际工程",
+      "price": 8.59,
+      "change_pct": -3.7,
+      "view": "偏弱，等待止跌确认"
+    },
+    {
+      "code": "002274",
+      "name": "华昌化工",
+      "industry": "化工",
+      "price": 5.48,
+      "change_pct": -4.86,
+      "view": "偏弱，等待止跌确认"
+    }
+  ],
   "risks": [
     "单一数据源可能延迟或调整字段",
     "资金流数据不作为单独买卖依据",
     "大幅波动标的次日注意兑现压力"
   ],
-  "next_actions": []
+  "next_actions": [
+    "关注华峰铝业：震荡，等待方向选择",
+    "关注金钼股份：震荡，等待方向选择",
+    "关注章源钨业：偏弱，等待止跌确认",
+    "关注北方国际：偏弱，等待止跌确认",
+    "关注华昌化工：偏弱，等待止跌确认"
+  ]
 }
