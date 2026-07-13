@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "type": "auction",
+  "title": "竞价报告尚未生成",
+  "date": "—",
+  "generated_at": "2026-07-14T00:00:00+08:00",
+  "is_trading_day": true,
+  "data_quality": {
+    "ok": 0,
+    "total": 12,
+    "warning": "等待首次运行"
+  },
+  "indices": [],
+  "watchlist": [],
+  "market_summary": "请在 GitHub Actions 中手动运行一次 auction。",
+  "sector_observation": [],
+  "focus": [],
+  "risks": [],
+  "next_actions": [],
+  "disclaimer": "仅供个人观察与复盘，不构成投资建议。"
+}
