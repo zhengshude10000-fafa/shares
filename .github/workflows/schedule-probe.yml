@@ -1,0 +1,16 @@
+name: Schedule probe
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm scheduler event
+        run: |
+          echo "event=${{ github.event_name }}"
+          echo "scheduled=${{ github.event.schedule }}"
+          date -u

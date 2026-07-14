@@ -1,9 +1,10 @@
 name: Generate A-share reports
 on:
   schedule:
-    - cron: '0 1 * * 1-5'
-    - cron: '27 1 * * 1-5'
-    - cron: '40 7 * * 1-5'
+    # Avoid the top-of-hour congestion window documented by GitHub Actions.
+    - cron: '47 0 * * 1-5'
+    - cron: '26 1 * * 1-5'
+    - cron: '43 7 * * 1-5'
   workflow_dispatch:
     inputs:
       report_type:
@@ -28,9 +29,9 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "value=${{ inputs.report_type }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 1 * * 1-5" ]; then
+          elif [ "${{ github.event.schedule }}" = "47 0 * * 1-5" ]; then
             echo "value=pre-market" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "27 1 * * 1-5" ]; then
+          elif [ "${{ github.event.schedule }}" = "26 1 * * 1-5" ]; then
             echo "value=auction" >> "$GITHUB_OUTPUT"
           else
             echo "value=after-market" >> "$GITHUB_OUTPUT"
