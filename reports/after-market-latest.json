@@ -2,7 +2,7 @@
   "schema_version": 1,
   "type": "after-market",
   "date": "2026-08-05",
-  "generated_at": "2026-08-05T00:02:54.189609+08:00",
+  "generated_at": "2026-08-05T23:49:55.679140+08:00",
   "is_trading_day": true,
   "data_quality": {
     "ok": 12,
@@ -12,22 +12,22 @@
   "indices": [
     {
       "name": "上证指数",
-      "change_pct": 0.33,
+      "change_pct": 1.47,
       "view": "震荡，等待方向选择"
     },
     {
       "name": "深证成指",
-      "change_pct": 3.25,
-      "view": "偏强，观察量价能否延续"
+      "change_pct": 1.86,
+      "view": "震荡，等待方向选择"
     },
     {
       "name": "创业板指",
-      "change_pct": 5.64,
-      "view": "强势，但防止高开回落"
+      "change_pct": 1.32,
+      "view": "震荡，等待方向选择"
     },
     {
       "name": "科创50",
-      "change_pct": 4.09,
+      "change_pct": 4.78,
       "view": "偏强，观察量价能否延续"
     }
   ],
@@ -36,56 +36,56 @@
       "code": "159558",
       "name": "半导体设备ETF易方达",
       "industry": "半导体设备",
-      "price": 1.003,
-      "change_pct": 5.47,
+      "price": 1.1,
+      "change_pct": 9.67,
+      "view": "强势，但防止高开回落"
+    },
+    {
+      "code": "002378",
+      "name": "章源钨业",
+      "industry": "小金属",
+      "price": 25.21,
+      "change_pct": 7.55,
       "view": "强势，但防止高开回落"
     },
     {
       "code": "000636",
       "name": "风华高科",
       "industry": "电子元件",
-      "price": 54.33,
-      "change_pct": 4.56,
-      "view": "偏强，观察量价能否延续"
-    },
-    {
-      "code": "002378",
-      "name": "章源钨业",
-      "industry": "小金属",
-      "price": 23.44,
-      "change_pct": 4.13,
-      "view": "偏强，观察量价能否延续"
+      "price": 57.8,
+      "change_pct": 6.39,
+      "view": "强势，但防止高开回落"
     },
     {
       "code": "000725",
       "name": "京东方Ａ",
       "industry": "面板",
-      "price": 5.63,
-      "change_pct": 3.87,
-      "view": "偏强，观察量价能否延续"
+      "price": 5.97,
+      "change_pct": 6.04,
+      "view": "强势，但防止高开回落"
     },
     {
       "code": "601958",
       "name": "金钼股份",
       "industry": "小金属",
-      "price": 21.95,
-      "change_pct": 3.54,
+      "price": 23.02,
+      "change_pct": 4.87,
       "view": "偏强，观察量价能否延续"
     },
     {
       "code": "000065",
       "name": "北方国际",
       "industry": "建筑与国际工程",
-      "price": 9.24,
-      "change_pct": 0.22,
+      "price": 9.29,
+      "change_pct": 0.54,
       "view": "震荡，等待方向选择"
     },
     {
       "code": "601702",
       "name": "华峰铝业",
       "industry": "工业金属",
-      "price": 15.66,
-      "change_pct": -0.82,
+      "price": 15.57,
+      "change_pct": -0.57,
       "view": "震荡，等待方向选择"
     },
     {
@@ -93,13 +93,13 @@
       "name": "华昌化工",
       "industry": "化工",
       "price": 5.54,
-      "change_pct": -1.25,
+      "change_pct": 0.0,
       "view": "震荡，等待方向选择"
     }
   ],
   "disclaimer": "仅供个人观察与复盘，不构成投资建议。",
   "title": "A股盘后复盘",
-  "market_summary": "自选样本上涨6只、下跌2只；结合指数强弱判断风险偏好。",
+  "market_summary": "自选样本上涨6只、下跌1只；结合指数强弱判断风险偏好。",
   "sector_observation": [
     {
       "sector": "半导体设备",
@@ -109,17 +109,17 @@
       "note": "观察板块内个股是否形成同步强弱"
     },
     {
-      "sector": "电子元件",
-      "symbols": [
-        "风华高科"
-      ],
-      "note": "观察板块内个股是否形成同步强弱"
-    },
-    {
       "sector": "小金属",
       "symbols": [
         "章源钨业",
         "金钼股份"
+      ],
+      "note": "观察板块内个股是否形成同步强弱"
+    },
+    {
+      "sector": "电子元件",
+      "symbols": [
+        "风华高科"
       ],
       "note": "观察板块内个股是否形成同步强弱"
     },
@@ -157,40 +157,40 @@
       "code": "159558",
       "name": "半导体设备ETF易方达",
       "industry": "半导体设备",
-      "price": 1.003,
-      "change_pct": 5.47,
+      "price": 1.1,
+      "change_pct": 9.67,
+      "view": "强势，但防止高开回落"
+    },
+    {
+      "code": "002378",
+      "name": "章源钨业",
+      "industry": "小金属",
+      "price": 25.21,
+      "change_pct": 7.55,
       "view": "强势，但防止高开回落"
     },
     {
       "code": "000636",
       "name": "风华高科",
       "industry": "电子元件",
-      "price": 54.33,
-      "change_pct": 4.56,
-      "view": "偏强，观察量价能否延续"
-    },
-    {
-      "code": "002378",
-      "name": "章源钨业",
-      "industry": "小金属",
-      "price": 23.44,
-      "change_pct": 4.13,
-      "view": "偏强，观察量价能否延续"
+      "price": 57.8,
+      "change_pct": 6.39,
+      "view": "强势，但防止高开回落"
     },
     {
       "code": "000725",
       "name": "京东方Ａ",
       "industry": "面板",
-      "price": 5.63,
-      "change_pct": 3.87,
-      "view": "偏强，观察量价能否延续"
+      "price": 5.97,
+      "change_pct": 6.04,
+      "view": "强势，但防止高开回落"
     },
     {
       "code": "601958",
       "name": "金钼股份",
       "industry": "小金属",
-      "price": 21.95,
-      "change_pct": 3.54,
+      "price": 23.02,
+      "change_pct": 4.87,
       "view": "偏强，观察量价能否延续"
     }
   ],
@@ -201,9 +201,9 @@
   ],
   "next_actions": [
     "关注半导体设备ETF易方达：强势，但防止高开回落",
-    "关注风华高科：偏强，观察量价能否延续",
-    "关注章源钨业：偏强，观察量价能否延续",
-    "关注京东方Ａ：偏强，观察量价能否延续",
+    "关注章源钨业：强势，但防止高开回落",
+    "关注风华高科：强势，但防止高开回落",
+    "关注京东方Ａ：强势，但防止高开回落",
     "关注金钼股份：偏强，观察量价能否延续"
   ]
 }
