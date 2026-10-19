@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "type": "auction",
-  "date": "2026-10-16",
-  "generated_at": "2026-10-16T13:57:01.620222+08:00",
+  "date": "2026-10-19",
+  "generated_at": "2026-10-19T14:19:53.877697+08:00",
   "is_trading_day": true,
   "data_quality": {
     "ok": 12,
@@ -12,22 +12,22 @@
   "indices": [
     {
       "name": "上证指数",
-      "change_pct": 0.22,
+      "change_pct": 0.55,
       "view": "震荡，等待方向选择"
     },
     {
       "name": "深证成指",
-      "change_pct": 0.32,
+      "change_pct": 0.36,
       "view": "震荡，等待方向选择"
     },
     {
       "name": "创业板指",
-      "change_pct": 0.1,
+      "change_pct": -0.62,
       "view": "震荡，等待方向选择"
     },
     {
       "name": "科创50",
-      "change_pct": 0.41,
+      "change_pct": -1.46,
       "view": "震荡，等待方向选择"
     }
   ],
@@ -36,64 +36,64 @@
       "code": "000065",
       "name": "北方国际",
       "industry": "建筑与国际工程",
-      "price": 9.41,
-      "change_pct": 2.28,
+      "price": 9.61,
+      "change_pct": 2.56,
       "view": "偏强，观察量价能否延续"
     },
     {
       "code": "002274",
       "name": "华昌化工",
       "industry": "化工",
-      "price": 5.52,
-      "change_pct": 1.66,
-      "view": "震荡，等待方向选择"
-    },
-    {
-      "code": "000725",
-      "name": "京东方Ａ",
-      "industry": "面板",
-      "price": 5.13,
-      "change_pct": 1.58,
-      "view": "震荡，等待方向选择"
-    },
-    {
-      "code": "601958",
-      "name": "金钼股份",
-      "industry": "小金属",
-      "price": 18.14,
-      "change_pct": 1.45,
+      "price": 5.57,
+      "change_pct": 1.64,
       "view": "震荡，等待方向选择"
     },
     {
       "code": "601702",
       "name": "华峰铝业",
       "industry": "工业金属",
-      "price": 14.27,
-      "change_pct": 0.99,
+      "price": 14.48,
+      "change_pct": 1.33,
+      "view": "震荡，等待方向选择"
+    },
+    {
+      "code": "601958",
+      "name": "金钼股份",
+      "industry": "小金属",
+      "price": 18.0,
+      "change_pct": 0.45,
       "view": "震荡，等待方向选择"
     },
     {
       "code": "002378",
       "name": "章源钨业",
       "industry": "小金属",
-      "price": 18.87,
-      "change_pct": 0.69,
+      "price": 18.66,
+      "change_pct": -0.27,
       "view": "震荡，等待方向选择"
     },
     {
-      "code": "159558",
-      "name": "半导体设备ETF易方达",
-      "industry": "半导体设备",
-      "price": 0.943,
-      "change_pct": -0.21,
+      "code": "000725",
+      "name": "京东方Ａ",
+      "industry": "面板",
+      "price": 5.07,
+      "change_pct": -1.17,
       "view": "震荡，等待方向选择"
     },
     {
       "code": "000636",
       "name": "风华高科",
       "industry": "电子元件",
-      "price": 40.98,
-      "change_pct": -2.8,
+      "price": 40.22,
+      "change_pct": -1.32,
+      "view": "震荡，等待方向选择"
+    },
+    {
+      "code": "159558",
+      "name": "半导体设备ETF易方达",
+      "industry": "半导体设备",
+      "price": 0.9,
+      "change_pct": -3.74,
       "view": "偏弱，等待止跌确认"
     }
   ],
@@ -116,9 +116,9 @@
       "note": "观察板块内个股是否形成同步强弱"
     },
     {
-      "sector": "面板",
+      "sector": "工业金属",
       "symbols": [
-        "京东方Ａ"
+        "华峰铝业"
       ],
       "note": "观察板块内个股是否形成同步强弱"
     },
@@ -131,16 +131,9 @@
       "note": "观察板块内个股是否形成同步强弱"
     },
     {
-      "sector": "工业金属",
+      "sector": "面板",
       "symbols": [
-        "华峰铝业"
-      ],
-      "note": "观察板块内个股是否形成同步强弱"
-    },
-    {
-      "sector": "半导体设备",
-      "symbols": [
-        "半导体设备ETF易方达"
+        "京东方Ａ"
       ],
       "note": "观察板块内个股是否形成同步强弱"
     },
@@ -150,6 +143,13 @@
         "风华高科"
       ],
       "note": "观察板块内个股是否形成同步强弱"
+    },
+    {
+      "sector": "半导体设备",
+      "symbols": [
+        "半导体设备ETF易方达"
+      ],
+      "note": "观察板块内个股是否形成同步强弱"
     }
   ],
   "focus": [
@@ -157,8 +157,8 @@
       "code": "000065",
       "name": "北方国际",
       "industry": "建筑与国际工程",
-      "price": 9.41,
-      "change_pct": 2.28,
+      "price": 9.61,
+      "change_pct": 2.56,
       "view": "偏强，观察量价能否延续",
       "auction_signal": "平开附近，等待开盘后方向确认"
     },
@@ -166,26 +166,8 @@
       "code": "002274",
       "name": "华昌化工",
       "industry": "化工",
-      "price": 5.52,
-      "change_pct": 1.66,
-      "view": "震荡，等待方向选择",
-      "auction_signal": "平开附近，等待开盘后方向确认"
-    },
-    {
-      "code": "000725",
-      "name": "京东方Ａ",
-      "industry": "面板",
-      "price": 5.13,
-      "change_pct": 1.58,
-      "view": "震荡，等待方向选择",
-      "auction_signal": "平开附近，等待开盘后方向确认"
-    },
-    {
-      "code": "601958",
-      "name": "金钼股份",
-      "industry": "小金属",
-      "price": 18.14,
-      "change_pct": 1.45,
+      "price": 5.57,
+      "change_pct": 1.64,
       "view": "震荡，等待方向选择",
       "auction_signal": "平开附近，等待开盘后方向确认"
     },
@@ -193,8 +175,26 @@
       "code": "601702",
       "name": "华峰铝业",
       "industry": "工业金属",
-      "price": 14.27,
-      "change_pct": 0.99,
+      "price": 14.48,
+      "change_pct": 1.33,
+      "view": "震荡，等待方向选择",
+      "auction_signal": "平开附近，等待开盘后方向确认"
+    },
+    {
+      "code": "601958",
+      "name": "金钼股份",
+      "industry": "小金属",
+      "price": 18.0,
+      "change_pct": 0.45,
+      "view": "震荡，等待方向选择",
+      "auction_signal": "平开附近，等待开盘后方向确认"
+    },
+    {
+      "code": "002378",
+      "name": "章源钨业",
+      "industry": "小金属",
+      "price": 18.66,
+      "change_pct": -0.27,
       "view": "震荡，等待方向选择",
       "auction_signal": "平开附近，等待开盘后方向确认"
     }
@@ -208,8 +208,8 @@
   "next_actions": [
     "北方国际：平开附近，等待开盘后方向确认",
     "华昌化工：平开附近，等待开盘后方向确认",
-    "京东方Ａ：平开附近，等待开盘后方向确认",
+    "华峰铝业：平开附近，等待开盘后方向确认",
     "金钼股份：平开附近，等待开盘后方向确认",
-    "华峰铝业：平开附近，等待开盘后方向确认"
+    "章源钨业：平开附近，等待开盘后方向确认"
   ]
 }
